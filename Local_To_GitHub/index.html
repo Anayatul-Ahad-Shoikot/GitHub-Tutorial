@@ -1,50 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LocalToRemote</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
-<body class="bg-red-200 flex flex-col items-center justify-start h-screen w-screen mt-[3rem]">
-    <div class="w-[1200px] flex flex-col items-start gap-3">
-        <h1 class="text-3xl text-black mb-4 text-center p-5 bg-red-300 rounded-3xl w-full">Project: From local PC to Github Repository</h1>
-        <p class="w-full text-2xl"><i>Scenario : </i><br></p>
-        <p class="w-full text-2xl">Let's say you have created a project in any folder in any drive. This can be any project. Now what you are trying to do is upload (push) this new project folder into your github account that is not yet in your git account. I'm assuming you have already a github account and you have installed, configured your git in local machine. Let's see how we do this.</p>
-        <p class="w-full text-2xl"><i>Steps : </i><br></p>
-        <ul class="flex flex-col gap-10 mb-[6rem]">
-            <li class="text-2xl">
-                1. Go to your root project folder and open terminal
-            </li>
-            <li class="text-2xl">
-                2. <b><code>git init :</code></b> Initializing git. In terminal write [git init] and press enter; telling git that start watching this folder. It will create a .git hidden file in your directory
-            </li>
-            <li class="text-2xl">
-                3. After that, go to your github account and create a repository there. Copy the repository link
-            </li>
-            <li>
-                <div class="grid grid-cols-2 gap-4">
-                    <img src="img/create_repo.jpg" alt="" class="w-full h-auto rounded-3xl">
-                    <img src="img/setting_repo.jpg" alt="" class="w-full h-auto rounded-3xl">
-                    <img src="img/copy_repo_link.jpg" alt="" class="w-full h-auto rounded-3xl">
+<body class="bg-gradient-to-b from-red-100 via-orange-50 to-white flex flex-col items-center py-10 min-h-screen">
+    <div class="max-w-5xl w-full px-6 relative">
+        <h1 class="fixed top-0 left-0 w-full text-5xl font-extrabold text-center bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent py-5 backdrop-blur-xl z-50">Local to GitHub</h1>
+        <h2 class="text-3xl font-bold mb-4 underline mt-[5rem]">Scenario:</h2>
+        <section class="bg-white shadow-lg rounded-2xl p-6 mb-8">
+            <p class="text-xl leading-relaxed mb-4">
+                You've created a project in a folder on your computer — it could be anywhere.
+                Now, you want to upload (<b>push</b>) this project to your GitHub account.
+                This guide assumes you already have:
+            </p>
+            <ul class="text-lg space-y-1">
+                <li>✅ A GitHub account</li>
+                <li>✅ Git installed on your computer</li>
+                <li>✅ Git configured with your name & email</li>
+            </ul>
+        </section>
+        <section>
+            <h2 class="text-3xl font-bold mb-6 underline">Steps:</h2>
+            <div class="space-y-6">
+                <div class="bg-white p-5 rounded-2xl shadow hover:shadow-xl transition flex items-start gap-4 border-l-4 border-red-400">
+                    <div class="flex-shrink-0 w-10 h-10 bg-red-400 text-white font-bold flex items-center justify-center rounded-full">1</div>
+                    <p class="text-xl">Open your project folder in VS Code (or any terminal).</p>
                 </div>
-            </li>
-            <li class="text-2xl">
-                4. <b><code>git remote add origin [your_git_repo_link] :</code></b> This will link your github account with this project folder. This command only need to execute one time. we don;t need to link every time we work on this project.
-            </li>
-            <li class="text-2xl">
-                5. <b><code>git add . :</code></b> It will tell git detect and collect all the changes you have made to your project, this is knows as staging. ( you can specifically tell git any file by writing file name or put (.) for all. Lets say you want to stage your index.html - then the comand will be git add index.html )
-            </li>
-            <li class="text-2xl">
-                6. <b><code>git commit -m [any note] :</code></b> This command will save all the changes into your local machine into .git file. But not in the cloud (github account).
-            </li>
-            <li class="text-2xl">
-                7. <b><code>git push -u origin main :</code></b> This command will uploads the changes into your github account in main branch by default.
-            </li>
-        </ul>
+                <div class="bg-white p-5 rounded-2xl shadow hover:shadow-xl transition flex items-start gap-4 border-l-4 border-red-400">
+                    <div class="flex-shrink-0 w-10 h-10 bg-red-400 text-white font-bold flex items-center justify-center rounded-full">2</div>
+                    <p class="text-xl">
+                        <code class="px-2 py-1 rounded font-mono text-red-400">git init</code>
+                        Initializes Git in your project folder and creates a hidden <b class="text-red-400">.git</b> directory.
+                        This tells Git to start tracking changes in this folder.
+                    </p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow hover:shadow-xl transition flex items-start gap-4 border-l-4 border-red-400">
+                    <div class="flex-shrink-0 w-10 h-10 bg-red-400 text-white font-bold flex items-center justify-center rounded-full">3</div>
+                    <p class="text-xl">
+                        Go to your GitHub account and create a new repository.
+                        <b>Do not</b> add a README, .gitignore, or license — keep it empty to avoid merge conflicts.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <img src="../img/create_repo.jpg" class="rounded-2xl shadow hover:scale-105 transition" alt="Create Repo">
+                    <img src="../img/setting_repo.jpg" class="rounded-2xl shadow hover:scale-105 transition" alt="Repo Settings">
+                    <img src="../img/copy_repo_link.jpg" class="rounded-2xl shadow hover:scale-105 transition" alt="Copy Link">
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow hover:shadow-xl transition flex items-start gap-4 border-l-4 border-red-400">
+                    <div class="flex-shrink-0 w-10 h-10 bg-red-400 text-white font-bold flex items-center justify-center rounded-full">4</div>
+                    <p class="text-xl">
+                        <code class="px-2 py-1 rounded font-mono text-red-400">git remote add origin &lt;repo_link&gt;</code>
+                        Links your local project with the GitHub repository (only needed once).
+                    </p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow hover:shadow-xl transition flex items-start gap-4 border-l-4 border-red-400">
+                    <div class="flex-shrink-0 w-10 h-10 bg-red-400 text-white font-bold flex items-center justify-center rounded-full">5</div>
+                    <p class="text-xl">
+                        <code class="px-2 py-1 rounded font-mono text-red-400">git add .</code>
+                        Stages all changes so Git knows what to include in the next commit.
+                        For a single file:
+                        <code class="px-2 py-1 rounded font-mono">git add filename</code>
+                    </p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow hover:shadow-xl transition flex items-start gap-4 border-l-4 border-red-400">
+                    <div class="flex-shrink-0 w-10 h-10 bg-red-400 text-white font-bold flex items-center justify-center rounded-full">6</div>
+                    <p class="text-xl">
+                        <code class="px-2 py-1 rounded font-mono text-red-400">git commit -m "Your message"</code>
+                        Saves your staged changes into Git history with a descriptive message.
+                    </p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow hover:shadow-xl transition flex items-start gap-4 border-l-4 border-red-400">
+                    <div class="flex-shrink-0 w-10 h-10 bg-red-400 text-white font-bold flex items-center justify-center rounded-full">7</div>
+                    <p class="text-xl">
+                        <code class="px-2 py-1 rounded font-mono text-red-400">git push -u origin main</code>
+                        Uploads your commits to GitHub's <b>main</b> branch.
+                        The <b>-u</b> flag sets <b>origin/main</b> as the default branch for future pushes.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="mt-10 bg-yellow-50 border-l-8 border-yellow-400 rounded-xl p-6 shadow">
+            <h2 class="text-2xl font-bold mb-3">💡 All Commands:</h2>
+            <pre class="p-4 rounded-lg overflow-x-auto text-lg font-mono">
+                git init
+                git remote add origin https://github.com/your-account-name/your-repository-name.git
+                git add .
+                git commit -m "first init"
+                git push -u origin main
+            </pre>
+        </section>
+        <section class="mt-8 bg-green-50 border-l-8 border-green-400 rounded-xl p-6 shadow">
+            <h2 class="text-2xl font-bold mb-3">💡 Pro Tip:</h2>
+            <p class="text-lg">
+                Once linked, you can just run:
+                <code class="px-2 py-1 rounded font-mono">git add .</code> →
+                <code class="px-2 py-1 rounded font-mono">git commit -m "message"</code> →
+                <code class="px-2 py-1 rounded font-mono">git push</code>
+                to update your GitHub repository.
+            </p>
+        </section>
     </div>
 </body>
-
 </html>
