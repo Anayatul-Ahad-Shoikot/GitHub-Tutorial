@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalToRemote</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-red-200 flex flex-col items-center justify-start h-screen w-screen mt-[3rem]">
+    <div class="w-[1200px] flex flex-col items-start gap-3">
+        <h1 class="text-3xl text-black mb-4 text-center p-5 bg-red-300 rounded-3xl w-full">Project: From local PC to Github Repository</h1>
+        <p class="w-full text-2xl"><i>Scenario : </i><br></p>
+        <p class="w-full text-2xl">Let's say you have created a project in any folder in any drive. This can be any project. Now what you are trying to do is upload (push) this new project folder into your github account that is not yet in your git account. I'm assuming you have already a github account and you have installed, configured your git in local machine. Let's see how we do this.</p>
+        <p class="w-full text-2xl"><i>Steps : </i><br></p>
+        <ul class="flex flex-col gap-10 mb-[6rem]">
+            <li class="text-2xl">
+                1. Go to your root project folder and open terminal
+            </li>
+            <li class="text-2xl">
+                2. <b><code>git init :</code></b> Initializing git. In terminal write [git init] and press enter; telling git that start watching this folder. It will create a .git hidden file in your directory
+            </li>
+            <li class="text-2xl">
+                3. After that, go to your github account and create a repository there. Copy the repository link
+            </li>
+            <li>
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="img/create_repo.jpg" alt="" class="w-full h-auto rounded-3xl">
+                    <img src="img/setting_repo.jpg" alt="" class="w-full h-auto rounded-3xl">
+                    <img src="img/copy_repo_link.jpg" alt="" class="w-full h-auto rounded-3xl">
+                </div>
+            </li>
+            <li class="text-2xl">
+                4. <b><code>git remote add origin [your_git_repo_link] :</code></b> This will link your github account with this project folder. This command only need to execute one time. we don;t need to link every time we work on this project.
+            </li>
+            <li class="text-2xl">
+                5. <b><code>git add . :</code></b> It will tell git detect and collect all the changes you have made to your project, this is knows as staging. ( you can specifically tell git any file by writing file name or put (.) for all. Lets say you want to stage your index.html - then the comand will be git add index.html )
+            </li>
+            <li class="text-2xl">
+                6. <b><code>git commit -m [any note] :</code></b> This command will save all the changes into your local machine into .git file. But not in the cloud (github account).
+            </li>
+            <li class="text-2xl">
+                7. <b><code>git push -u origin main :</code></b> This command will uploads the changes into your github account in main branch by default.
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
