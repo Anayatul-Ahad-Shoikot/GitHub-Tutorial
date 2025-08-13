@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GitHub to Local PC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-b from-blue-100 via-cyan-50 to-white flex flex-col items-center py-10 min-h-screen">
+    <div class="max-w-5xl w-full px-6 relative">
+
+        <!-- Fixed Heading -->
+        <h1
+            class="fixed top-0 left-0 w-full text-5xl font-extrabold text-center bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent py-5 backdrop-blur-xl z-50">
+            GitHub To Local
+        </h1>
+
+        <!-- Spacer so content not hidden behind fixed heading -->
+        <div class="mt-[6rem]"></div>
+
+        <h2 class="text-3xl font-bold mb-4 underline">Scenario:</h2>
+        <section class="bg-white shadow-lg rounded-2xl p-6 mb-8">
+            <p class="text-xl leading-relaxed mb-4">
+                You have a project repository on GitHub and want to download (<b>clone</b>) it to your local computer
+                for development.
+                This guide assumes you already have:
+            </p>
+            <ul class="text-lg space-y-1">
+                <li>✅ A GitHub repository URL</li>
+                <li>✅ Git installed on your computer</li>
+                <li>✅ Access permissions if the repo is private</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="text-3xl font-bold mb-6 underline">Steps:</h2>
+            <div class="space-y-6">
+
+                <div
+                    class="bg-white p-5 rounded-2xl shadow hover:shadow-xl transition flex items-start gap-4 border-l-4 border-blue-500">
+                    <div
+                        class="flex-shrink-0 w-10 h-10 bg-blue-500 text-white font-bold flex items-center justify-center rounded-full">
+                        1</div>
+                    <p class="text-xl">
+                        Open your terminal or VS Code integrated terminal.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white p-5 rounded-2xl shadow hover:shadow-xl transition flex items-start gap-4 border-l-4 border-blue-500">
+                    <div
+                        class="flex-shrink-0 w-10 h-10 bg-blue-500 text-white font-bold flex items-center justify-center rounded-full">
+                        2</div>
+                    <p class="text-xl">
+                        Navigate to the folder where you want to clone the project. For example:
+                        <code class="px-2 py-1 rounded font-mono text-blue-500">cd path/to/your/folder</code>.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white p-5 rounded-2xl shadow hover:shadow-xl transition flex items-start gap-4 border-l-4 border-blue-500">
+                    <div
+                        class="flex-shrink-0 w-10 h-10 bg-blue-500 text-white font-bold flex items-center justify-center rounded-full">
+                        3</div>
+                    <p class="text-xl">
+                        Copy the repository URL from GitHub. Click the <b>Code</b> button on GitHub and copy the HTTPS
+                        URL.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white p-5 rounded-2xl shadow hover:shadow-xl transition flex items-start gap-4 border-l-4 border-blue-500">
+                    <div
+                        class="flex-shrink-0 w-10 h-10 bg-blue-500 text-white font-bold flex items-center justify-center rounded-full">
+                        4</div>
+                    <p class="text-xl">
+                        Run the clone command:
+                        <code class="px-2 py-1 rounded font-mono text-blue-500">git clone &lt;repo_url&gt;</code>.
+                        This downloads the entire repository into a new folder.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white p-5 rounded-2xl shadow hover:shadow-xl transition flex items-start gap-4 border-l-4 border-blue-500">
+                    <div
+                        class="flex-shrink-0 w-10 h-10 bg-blue-500 text-white font-bold flex items-center justify-center rounded-full">
+                        5</div>
+                    <p class="text-xl">
+                        Navigate into the cloned project folder:
+                        <code class="px-2 py-1 rounded font-mono text-blue-500">cd repo-folder-name</code>.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white p-5 rounded-2xl shadow hover:shadow-xl transition flex items-start gap-4 border-l-4 border-blue-500">
+                    <div
+                        class="flex-shrink-0 w-10 h-10 bg-blue-500 text-white font-bold flex items-center justify-center rounded-full">
+                        6</div>
+                    <p class="text-xl">
+                        Now you can start working! Use <code
+                            class="px-2 py-1 rounded font-mono text-blue-500">git pull</code> to fetch updates, and
+                        later <code class="px-2 py-1 rounded font-mono text-blue-500">git push</code> to send your
+                        commits back to GitHub.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mt-10 bg-yellow-50 border-l-8 border-yellow-400 rounded-xl p-6 shadow">
+            <h2 class="text-2xl font-bold mb-3">💡 All Commands:</h2>
+            <pre class="p-4 rounded-lg overflow-x-auto text-lg font-mono">
+git clone https://github.com/your-account/your-repository.git
+cd your-repository
+git pull
+git push
+      </pre>
+        </section>
+
+        <section class="mt-8 bg-green-50 border-l-8 border-green-400 rounded-xl p-6 shadow">
+            <h2 class="text-2xl font-bold mb-3">💡 Pro Tip:</h2>
+            <p class="text-lg">
+                If you already have a local copy, use <code class="px-2 py-1 rounded font-mono">git pull</code> to
+                update it instead of cloning again.
+            </p>
+        </section>
+    </div>
+</body>
+
+</html>
